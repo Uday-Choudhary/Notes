@@ -82,3 +82,37 @@ def has_path_sum(root, target , total = 0) :
     right_ans = has_path_sum(root.right , target , total)
     
     return left_ans or right_ans
+
+# Level Order Traversal of Binary Tree
+from collections import deque
+'''
+class Node:
+    def __init__(self, val=0):
+        self.val = val
+        self.left = None
+        self.right = None
+'''
+
+def level_order_traversal(root):
+    if not root:
+        return []
+    
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        level_size = len(queue)
+        level_nodes = []
+        
+        for _ in range(level_size):
+            node = queue.popleft()
+            level_nodes.append(node.val)
+            
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        
+        result.append(level_nodes)
+    
+    return result
