@@ -60,4 +60,25 @@ def deleteElement(head, k):
 
     return head
 
-# Maximum Depth
+# Path Sum
+'''
+class Node:
+    def __init__(self, val=0, left=None, right=None):
+        self.key = val
+        self.left = left
+        self.right = right
+'''
+def has_path_sum(root, target , total = 0) :
+    
+    if root is None:
+        return False
+
+    total+= root.key
+    
+    if (total == target) and (root.left == None and root.right == None):
+        return True
+
+    left_ans = has_path_sum(root.left , target , total)
+    right_ans = has_path_sum(root.right , target , total)
+    
+    return left_ans or right_ans
