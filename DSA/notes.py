@@ -1,118 +1,118 @@
-print("Hello Hello ")
+# print("Hello Hello ")
 
-#Insert node at the given position
+# #Insert node at the given position
 
-'''
-    {
-        class Node:
-            def __init__(self, data):   # data -> value stored in node
-                self.data = data
-                self.next = None
-    }
-'''
-def addElement(head, M, K):
-    fast = head
-    slow = head
-    new_node = Node(K)
+# '''
+#     {
+#         class Node:
+#             def __init__(self, data):   # data -> value stored in node
+#                 self.data = data
+#                 self.next = None
+#     }
+# '''
+# def addElement(head, M, K):
+#     fast = head
+#     slow = head
+#     new_node = Node(K)
 
-    if M == 1:
-        new_node.next = head
-        return new_node
+#     if M == 1:
+#         new_node.next = head
+#         return new_node
 
-    if head is None:
-        return None
+#     if head is None:
+#         return None
     
 
 
-    for _ in range(M-2):
-        fast = fast.next
-    preserve_fast_next = fast.next
-    fast.next = new_node
-    new_node.next = preserve_fast_next
+#     for _ in range(M-2):
+#         fast = fast.next
+#     preserve_fast_next = fast.next
+#     fast.next = new_node
+#     new_node.next = preserve_fast_next
 
-    return head
+#     return head
 
-#Delete the Kth node from the end
+# #Delete the Kth node from the end
 
-'''
-class Node:
-    def __init__(self, val):
-        self.val = val
-        self.next = None
-'''
-def deleteElement(head, k):
-    fast = head
-    slow = head
+# '''
+# class Node:
+#     def __init__(self, val):
+#         self.val = val
+#         self.next = None
+# '''
+# def deleteElement(head, k):
+#     fast = head
+#     slow = head
 
-    for _ in range(k):
-        fast = fast.next
+#     for _ in range(k):
+#         fast = fast.next
 
-    #k = len list ho gaya to piche se k mtlb 1st element so head.next kar daynge return head delete ho jayga
+#     #k = len list ho gaya to piche se k mtlb 1st element so head.next kar daynge return head delete ho jayga
     
-    if not fast:
-        return head.next  # new head
+#     if not fast:
+#         return head.next  # new head
 
-    while fast.next:
-        fast = fast.next
-        slow = slow.next
+#     while fast.next:
+#         fast = fast.next
+#         slow = slow.next
 
-    slow.next = slow.next.next
+#     slow.next = slow.next.next
 
-    return head
+#     return head
 
-# Path Sum
-'''
-class Node:
-    def __init__(self, val=0, left=None, right=None):
-        self.key = val
-        self.left = left
-        self.right = right
-'''
-def has_path_sum(root, target , total = 0) :
+# # Path Sum
+# '''
+# class Node:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.key = val
+#         self.left = left
+#         self.right = right
+# '''
+# def has_path_sum(root, target , total = 0) :
     
-    if root is None:
-        return False
+#     if root is None:
+#         return False
 
-    total+= root.key
+#     total+= root.key
     
-    if (total == target) and (root.left == None and root.right == None):
-        return True
+#     if (total == target) and (root.left == None and root.right == None):
+#         return True
 
-    left_ans = has_path_sum(root.left , target , total)
-    right_ans = has_path_sum(root.right , target , total)
+#     left_ans = has_path_sum(root.left , target , total)
+#     right_ans = has_path_sum(root.right , target , total)
     
-    return left_ans or right_ans
+#     return left_ans or right_ans
 
-# Level Order Traversal of Binary Tree
-from collections import deque
-'''
-class Node:
-    def __init__(self, val=0):
-        self.val = val
-        self.left = None
-        self.right = None
-'''
+# # Level Order Traversal of Binary Tree
+# from collections import deque
+# '''
+# class Node:
+#     def __init__(self, val=0):
+#         self.val = val
+#         self.left = None
+#         self.right = None
+# '''
 
-def level_order_traversal(root):
-    if not root:
-        return []
+# def level_order_traversal(root):
+#     if not root:
+#         return []
     
-    result = []
-    queue = deque([root])
+#     result = []
+#     queue = deque([root])
     
-    while queue:
-        level_size = len(queue)
-        level_nodes = []
+#     while queue:
+#         level_size = len(queue)
+#         level_nodes = []
         
-        for _ in range(level_size):
-            node = queue.popleft()
-            level_nodes.append(node.val)
+#         for _ in range(level_size):
+#             node = queue.popleft()
+#             level_nodes.append(node.val)
             
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
+#             if node.left:
+#                 queue.append(node.left)
+#             if node.right:
+#                 queue.append(node.right)
         
-        result.append(level_nodes)
+#         result.append(level_nodes)
     
-    return result
+#     return result
