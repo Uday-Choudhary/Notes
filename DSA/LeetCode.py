@@ -117,3 +117,75 @@
 # 540. Single Element in a Sorted Array
 
 # Approch - starting me even-odd pe same value hogi and single value ke bad odd-even pe same value hogi usi hisab se rejection kara h binery search me
+# class Solution:
+#     def singleNonDuplicate(self, arr: List[int]) -> int:
+#         low = 0
+#         n = len(arr)
+#         high = n - 1
+
+#         if len(arr) == 1:
+#             return arr[0]
+
+#         if arr[0] != arr[1]:
+#             return arr[0]
+
+#         if arr[n - 1] != arr[n - 2]:
+#             return arr[n - 1]
+
+#         while high >= low:
+#             mid = (low + high) // 2
+
+#             if mid % 2 == 0:
+#                 if arr[mid] == arr[mid + 1]:
+#                     low = mid + 1
+#                 elif arr[mid] == arr[mid - 1]:
+#                     high = mid - 1
+#                 else:
+#                     return arr[mid]
+
+#             else:
+#                 if arr[mid] == arr[mid - 1]:
+#                     low = mid + 1
+#                 elif arr[mid] == arr[mid + 1]:
+#                     high = mid - 1
+#                 else:
+#                     return arr[mid]
+
+def minDays(bloomDay, m, k):
+    ans = -1
+
+    if len(bloomDay) < k * m:
+        return ans
+
+    def canMake(mid):
+        bouquets = 0
+        flowers = 0
+        for days in bloomDay:
+            if days <= mid:
+                flowers += 1
+                if flowers == k:
+                    bouquets += 1
+                    flowers = 0
+            else:
+                flowers = 0
+        return bouquets >= m
+
+    low = min(bloomDay)
+    high = max(bloomDay)
+
+    while low <= high:
+        mid = (low + high) // 2
+        if canMake(mid):
+            ans = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return ans
+
+
+# Input
+bloomDay = list(map(int, input().split()))
+m, k = map(int, input().split())
+
+print(minDays(bloomDay, m, k))
