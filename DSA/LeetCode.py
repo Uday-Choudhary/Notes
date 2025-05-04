@@ -151,41 +151,47 @@
 #                 else:
 #                     return arr[mid]
 
-def minDays(bloomDay, m, k):
-    ans = -1
+# def minDays(bloomDay, m, k):
+#     ans = -1
 
-    if len(bloomDay) < k * m:
-        return ans
+#     if len(bloomDay) < k * m:
+#         return ans
 
-    def canMake(mid):
-        bouquets = 0
-        flowers = 0
-        for days in bloomDay:
-            if days <= mid:
-                flowers += 1
-                if flowers == k:
-                    bouquets += 1
-                    flowers = 0
-            else:
-                flowers = 0
-        return bouquets >= m
+#     def canMake(mid):
+#         bouquets = 0
+#         flowers = 0
+#         for days in bloomDay:
+#             if days <= mid:
+#                 flowers += 1
+#                 if flowers == k:
+#                     bouquets += 1
+#                     flowers = 0
+#             else:
+#                 flowers = 0
+#         return bouquets >= m
 
-    low = min(bloomDay)
-    high = max(bloomDay)
+#     low = min(bloomDay)
+#     high = max(bloomDay)
 
-    while low <= high:
-        mid = (low + high) // 2
-        if canMake(mid):
-            ans = mid
-            high = mid - 1
-        else:
-            low = mid + 1
+#     while low <= high:
+#         mid = (low + high) // 2
+#         if canMake(mid):
+#             ans = mid
+#             high = mid - 1
+#         else:
+#             low = mid + 1
 
-    return ans
+#     return ans
 
 
-# Input
-bloomDay = list(map(int, input().split()))
-m, k = map(int, input().split())
+# # Input
+# bloomDay = list(map(int, input().split()))
+# m, k = map(int, input().split())
 
-print(minDays(bloomDay, m, k))
+# print(minDays(bloomDay, m, k))
+
+''' check function mid le rha h dekh rha h days mid se  kam ya equal h to ek flower khil 
+jayga aise contine jitni bar ho rh h flower bada rhe h if flower = k ho rhe h to bouket +
+1 kar rhe h or flower ko vapas 0 kar rhe h kyoki ek bouke ban gaya h nai karnge to flower 
+badtee jaynge vapas k vali condition check he nai hogi orrr day jab bhi jyada aa jye mtlb or time 
+lagega uss day flower bloom nai hoga to abhi tak ki strek flower = 0 kar daynge'''
