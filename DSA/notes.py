@@ -116,3 +116,11 @@
 #         result.append(level_nodes)
     
 #     return result
+# 2d to 1d matrix
+# rows = len(matrix)
+# cols = len(matrix[0])
+
+# for index in range(rows * cols):
+#     row = index // cols
+#     col = index % cols
+#     print(matrix[row][col], end=' ')
