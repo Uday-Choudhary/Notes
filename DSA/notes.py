@@ -124,3 +124,14 @@
 #     row = index // cols
 #     col = index % cols
 #     print(matrix[row][col], end=' ')
+
+def insertion_sort(seq):
+    n = len(seq)
+    for i in range(1, n):  # Start from the second element (index 1)
+        key = seq[i]
+        j = i - 1
+        while j >= 0 and seq[j] > key:  # Shift elements to the right
+            seq[j + 1] = seq[j]
+            j -= 1
+        seq[j + 1] = key  # Insert key at the correct position
+    return seq  # Return the sorted list
