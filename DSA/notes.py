@@ -135,3 +135,31 @@ def insertion_sort(seq):
             j -= 1
         seq[j + 1] = key  # Insert key at the correct position
     return seq  # Return the sorted list
+
+# import React, { useState } from 'react';
+
+# const ItemList = () => {
+#   const items = [
+#     { name: 'Apple', details: 'A sweet red fruit, high in vitamins.' },
+#     { name: 'Banana', details: 'A yellow fruit, rich in potassium.' },
+#     { name: 'Orange', details: 'A citrus fruit, packed with vitamin C.' },
+#   ];
+
+#   const [showDetails, setShowDetails] = useState(false);
+
+#   return (
+#     <div>
+#       <button onClick={() => setShowDetails(!showDetails)}>
+#         {showDetails ? 'Hide All Details' : 'Show All Details'}
+#       </button>
+#       {showDetails && items.map((item, index) => (
+#         <div key={index}>
+#           <strong>{item.name}</strong>
+#           <p>{item.details}</p>
+#         </div>
+#       ))}
+#     </div>
+#   );
+# };
+
+# export default ItemList;
