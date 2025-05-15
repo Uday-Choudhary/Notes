@@ -163,3 +163,29 @@ def insertion_sort(seq):
 # };
 
 # export default ItemList;
+
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+'''
+def calculateDifference(root):
+    if not root:
+        return 0
+
+    min_node = root
+    while min_node.left:
+        min_node = min_node.left
+    minimum = min_node.data
+
+    max_node = root
+    while max_node.right:
+        max_node = max_node.right
+    maximum = max_node.data
+
+    product = minimum * maximum
+    summation = minimum + maximum
+
+    return product - summation
