@@ -195,3 +195,22 @@ jayga aise contine jitni bar ho rh h flower bada rhe h if flower = k ho rhe h to
 1 kar rhe h or flower ko vapas 0 kar rhe h kyoki ek bouke ban gaya h nai karnge to flower 
 badtee jaynge vapas k vali condition check he nai hogi orrr day jab bhi jyada aa jye mtlb or time 
 lagega uss day flower bloom nai hoga to abhi tak ki strek flower = 0 kar daynge'''
+
+
+#Leetcode 75
+#Dutch National Flag Algorithm
+def sortColors(nums):
+    low, mid = 0, 0
+    high = len(nums) - 1
+
+    while mid <= high:
+        if nums[mid] == 0:
+            nums[low], nums[mid] = nums[mid], nums[low]
+            low += 1
+            mid += 1
+        elif nums[mid] == 1:
+            mid += 1
+        else:
+            nums[mid], nums[high] = nums[high], nums[mid]
+            high -= 1
+    return nums
