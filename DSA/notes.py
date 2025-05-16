@@ -191,29 +191,29 @@ class Node:
 #     return product - summation
 
 
-def answerQueries(nums, queries):
-    # Step 1: Sort nums to pick the smallest elements first
-    nums.sort()
+# def answerQueries(nums, queries):
+#     # Step 1: Sort nums to pick the smallest elements first
+#     nums.sort()
     
-    # Step 2: Compute prefix sum array
-    prefix_sum = [0] * len(nums)
-    prefix_sum[0] = nums[0]
-    for i in range(1, len(nums)):
-        prefix_sum[i] = prefix_sum[i - 1] + nums[i]
+#     # Step 2: Compute prefix sum array
+#     prefix_sum = [0] * len(nums)
+#     prefix_sum[0] = nums[0]
+#     for i in range(1, len(nums)):
+#         prefix_sum[i] = prefix_sum[i - 1] + nums[i]
 
-    # Step 3: Answer each query using a manual binary search
-    def binary_search(arr, target):
-        left, right = 0, len(arr) - 1
-        while left <= right:
-            mid = (left + right) // 2
-            if arr[mid] <= target:
-                left = mid + 1
-            else:
-                right = mid - 1
-        return left  # The position where the sum is still <= target
+#     # Step 3: Answer each query using a manual binary search
+#     def binary_search(arr, target):
+#         left, right = 0, len(arr) - 1
+#         while left <= right:
+#             mid = (left + right) // 2
+#             if arr[mid] <= target:
+#                 left = mid + 1
+#             else:
+#                 right = mid - 1
+#         return left  # The position where the sum is still <= target
 
-    result = []
-    for q in queries:
-        result.append(binary_search(prefix_sum, q))
+#     result = []
+#     for q in queries:
+#         result.append(binary_search(prefix_sum, q))
     
-    return result
+#     return result
