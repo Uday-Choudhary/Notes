@@ -38,4 +38,20 @@
 # print(subsequences)
 # # Output: [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
 
-opopopopop
+def insertion_sort(seq):
+    n = len(seq)
+    for i in range(n):
+        j = i
+        while(j > 0 and seq[j-1] > seq[j]):
+            seq[j-1] , seq[j] = seq[j] , seq[j-1]
+            j-=1
+    return seq
+
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i+1 , len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i] , arr[min_idx] = arr[min_idx] , arr[i] 
