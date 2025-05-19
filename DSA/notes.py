@@ -236,3 +236,26 @@ def sortColors(nums):
 #         result.append(binary_search(prefix_sum, q))
     
 #     return result
+
+L , R = map(int , input().split())
+max_value = 10**6
+is_prime = [True] * (max_value+1)
+
+is_prime[0] = False
+is_prime[1] = False
+
+for i in range(2 , int(max_value ** 0.5)+1):
+    if is_prime[i]:
+        for j in range(i*i , max_value+1 , i):
+            is_prime[j] = False
+ 
+prime_count = [0] * (max_value+1)
+
+for i in range(1 , max_value+1):
+    prime_count[i] = prime_count[i-1] + (1 if is_prime[i] else 0)
+
+if L == 0:
+    print(prime_count[R])
+
+else:
+    print(prime_count[R] - prime_count[L-1])
