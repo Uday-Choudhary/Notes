@@ -257,5 +257,8 @@ for i in range(1 , max_value+1):
 if L == 0:
     print(prime_count[R])
 
+
+I have sooo much work to do man
+
 else:
     print(prime_count[R] - prime_count[L-1])
