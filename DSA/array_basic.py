@@ -11,7 +11,7 @@
 # subarrays = generate_subarrays(arr)
 # print(subarrays)
 
-# # Output: [[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]].....
+# # Output: [[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]].....,,,,
 # # Subsequence generation
 # def generate_subsequences(arr):
 #     subsequences = []
