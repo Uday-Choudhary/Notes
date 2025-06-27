@@ -43,6 +43,9 @@
 # Day4
 # User function Template for python3
 
+from typing import List
+
+
 class Solution:
     # Function to rotate an array by d elements in counter-clockwise direction.
     def rotateArr(self, arr, d):
@@ -62,3 +65,13 @@ class Solution:
             pos += 1
 
         return arr
+
+
+# Day 7
+class Solution:
+    def maximumProfit(self, prices) -> int:
+        profit = 0
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i-1]:
+                profit += prices[i] - prices[i-1]
+        return profit
