@@ -116,3 +116,17 @@
 #         result.append(level_nodes)
     
 #     return result
+#Day8
+class Solution:
+    def maximumProfit(self, prices):
+        # code here
+        min_price = float('inf')
+        max_profit = 0
+        
+        for i in prices:
+            if i < min_price:
+                min_price = i
+            else:
+                profit = i - min_price
+                max_profit = max(max_profit , profit)
+        return max_profit
