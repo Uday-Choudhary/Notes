@@ -75,3 +75,24 @@ class Solution:
             if prices[i] > prices[i-1]:
                 profit += prices[i] - prices[i-1]
         return profit
+
+#Day 8
+#User function Template for python3
+
+class Solution:
+    def getMinDiff(self, arr,k):
+        n = len(arr)
+        arr.sort()
+        initial_diff = arr[-1] - arr[0]
+        smallest = arr[0] + k
+        largest = arr[-1] - k
+        min_diff = initial_diff
+        
+        for i in range(n-1):
+            min_elem = min(smallest , arr[i+1] - k)
+            max_elem = max(largest, arr[i] + k)
+            
+            if min_elem < 0:
+                continue
+            min_diff = min(min_diff , max_elem - min_elem)
+        return min_diff
