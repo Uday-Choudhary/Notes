@@ -105,3 +105,23 @@ class Solution:
             max_current = max(arr[i] , max_current + arr[i])
             max_global = max(max_global , max_current)
         return max_global
+
+#Day11
+class Solution:
+	def maxProduct(self,arr):
+        if not arr:
+            return 0
+        max_ending_here = min_ending_here = max_so_far = arr[0]
+        
+        for i in range(1,len(arr)):
+            num = arr[i]
+            
+            if num < 0:
+                max_ending_here , min_ending_here = min_ending_here , max_ending_here
+            
+            max_ending_here = max(num , num* max_ending_here)
+            min_ending_here = min(num , num * min_ending_here)
+            
+            max_so_far = max(max_so_far , max_ending_here)
+            
+        return max_so_far
