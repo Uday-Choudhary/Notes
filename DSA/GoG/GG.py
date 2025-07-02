@@ -97,58 +97,58 @@ class Solution:
             min_diff = min(min_diff , max_elem - min_elem)
         return min_diff
 # Day10
-class Solution:
-    def maxSubArraySum(self, arr):
-        max_current = max_global = arr[0]
+# class Solution:
+#     def maxSubArraySum(self, arr):
+#         max_current = max_global = arr[0]
         
-        for i in range(1 , len(arr)):
-            max_current = max(arr[i] , max_current + arr[i])
-            max_global = max(max_global , max_current)
-        return max_global
+#         for i in range(1 , len(arr)):
+#             max_current = max(arr[i] , max_current + arr[i])
+#             max_global = max(max_global , max_current)
+#         return max_global
 
-#Day11
-class Solution:
-	def maxProduct(self,arr):
-        if not arr:
-            return 0
-        max_ending_here = min_ending_here = max_so_far = arr[0]
+# #Day11
+# class Solution:
+# 	def maxProduct(self,arr):
+#         if not arr:
+#             return 0
+#         max_ending_here = min_ending_here = max_so_far = arr[0]
         
-        for i in range(1,len(arr)):
-            num = arr[i]
+#         for i in range(1,len(arr)):
+#             num = arr[i]
             
-            if num < 0:
-                max_ending_here , min_ending_here = min_ending_here , max_ending_here
+#             if num < 0:
+#                 max_ending_here , min_ending_here = min_ending_here , max_ending_here
             
-            max_ending_here = max(num , num* max_ending_here)
-            min_ending_here = min(num , num * min_ending_here)
+#             max_ending_here = max(num , num* max_ending_here)
+#             min_ending_here = min(num , num * min_ending_here)
             
-            max_so_far = max(max_so_far , max_ending_here)
+#             max_so_far = max(max_so_far , max_ending_here)
             
-        return max_so_far
+#         return max_so_far
 
-#Day12
-class Solution:
-    def kadane(self, arr):
-        max_ending = max_so_far = arr[0]
-        for x in arr[1:]:
-            max_ending = max(x , max_ending+x)
-            max_so_far = max(max_so_far , max_ending)
-        return max_so_far
+# #Day12
+# class Solution:
+#     def kadane(self, arr):
+#         max_ending = max_so_far = arr[0]
+#         for x in arr[1:]:
+#             max_ending = max(x , max_ending+x)
+#             max_so_far = max(max_so_far , max_ending)
+#         return max_so_far
         
     
-    def min_kadane(self , arr):
-        min_ending = min_so_far = arr[0]
-        for x in arr[1:]:
-            min_ending = min(x , min_ending+x)
-            min_so_far = min(min_so_far , min_ending)
-        return min_so_far
+#     def min_kadane(self , arr):
+#         min_ending = min_so_far = arr[0]
+#         for x in arr[1:]:
+#             min_ending = min(x , min_ending+x)
+#             min_so_far = min(min_so_far , min_ending)
+#         return min_so_far
         
-    def circularSubarraySum(self , arr):
-        total_sum = sum(arr)
-        max_kadane = self.kadane(arr)
-        min_kadane = self.min_kadane(arr)
+#     def circularSubarraySum(self , arr):
+#         total_sum = sum(arr)
+#         max_kadane = self.kadane(arr)
+#         min_kadane = self.min_kadane(arr)
         
-        if max_kadane < 0:
-            return max_kadane
+#         if max_kadane < 0:
+#             return max_kadane
         
-        return max(max_kadane , total_sum - min_kadane)
+#         return max(max_kadane , total_sum - min_kadane)
