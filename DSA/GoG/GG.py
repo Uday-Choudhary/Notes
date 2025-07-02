@@ -125,3 +125,30 @@ class Solution:
             max_so_far = max(max_so_far , max_ending_here)
             
         return max_so_far
+
+#Day12
+class Solution:
+    def kadane(self, arr):
+        max_ending = max_so_far = arr[0]
+        for x in arr[1:]:
+            max_ending = max(x , max_ending+x)
+            max_so_far = max(max_so_far , max_ending)
+        return max_so_far
+        
+    
+    def min_kadane(self , arr):
+        min_ending = min_so_far = arr[0]
+        for x in arr[1:]:
+            min_ending = min(x , min_ending+x)
+            min_so_far = min(min_so_far , min_ending)
+        return min_so_far
+        
+    def circularSubarraySum(self , arr):
+        total_sum = sum(arr)
+        max_kadane = self.kadane(arr)
+        min_kadane = self.min_kadane(arr)
+        
+        if max_kadane < 0:
+            return max_kadane
+        
+        return max(max_kadane , total_sum - min_kadane)
