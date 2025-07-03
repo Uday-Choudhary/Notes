@@ -79,23 +79,23 @@ class Solution:
 #Day 8
 #User function Template for python3
 
-class Solution:
-    def getMinDiff(self, arr,k):
-        n = len(arr)
-        arr.sort()
-        initial_diff = arr[-1] - arr[0]
-        smallest = arr[0] + k
-        largest = arr[-1] - k
-        min_diff = initial_diff
+# class Solution:
+#     def getMinDiff(self, arr,k):
+#         n = len(arr)
+#         arr.sort()
+#         initial_diff = arr[-1] - arr[0]
+#         smallest = arr[0] + k
+#         largest = arr[-1] - k
+#         min_diff = initial_diff
         
-        for i in range(n-1):
-            min_elem = min(smallest , arr[i+1] - k)
-            max_elem = max(largest, arr[i] + k)
+#         for i in range(n-1):
+#             min_elem = min(smallest , arr[i+1] - k)
+#             max_elem = max(largest, arr[i] + k)
             
-            if min_elem < 0:
-                continue
-            min_diff = min(min_diff , max_elem - min_elem)
-        return min_diff
+#             if min_elem < 0:
+#                 continue
+#             min_diff = min(min_diff , max_elem - min_elem)
+#         return min_diff
 # Day10
 # class Solution:
 #     def maxSubArraySum(self, arr):
