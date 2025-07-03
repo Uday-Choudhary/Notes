@@ -67,14 +67,14 @@ class Solution:
         return arr
 
 
-# Day 7
-class Solution:
-    def maximumProfit(self, prices) -> int:
-        profit = 0
-        for i in range(1, len(prices)):
-            if prices[i] > prices[i-1]:
-                profit += prices[i] - prices[i-1]
-        return profit
+# # Day 7
+# class Solution:
+#     def maximumProfit(self, prices) -> int:
+#         profit = 0
+#         for i in range(1, len(prices)):
+#             if prices[i] > prices[i-1]:
+#                 profit += prices[i] - prices[i-1]
+#         return profit
 
 #Day 8
 #User function Template for python3
@@ -152,7 +152,7 @@ class Solution:
 #             return max_kadane
         
 #         return max(max_kadane , total_sum - min_kadane)
-
+#Day13
 class Solution:
     def missingNumber(self, arr):
         n = len(arr)
