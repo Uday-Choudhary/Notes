@@ -215,3 +215,21 @@ class Solution:
 	    result_str = ''.join(reversed(result)).lstrip('0')
 	    
 	    return result_str if result_str else '0'
+# Day16
+class Solution:
+    def areAnagrams(self, s1, s2):
+       # code here
+        if len(s1) != len(s2):
+            return False
+           
+        freq1 = [0] * 26
+        freq2 = [0] * 26
+        
+        for char in s1:
+            freq1[ord(char) - ord('a')] += 1
+            
+        for char in s2:
+            freq2[ord(char) - ord('a')] += 1
+            
+        return freq1 == freq2
+       
