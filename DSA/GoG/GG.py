@@ -216,37 +216,37 @@ class Solution:
 	    
 	    return result_str if result_str else '0'
 # Day16
-class Solution:
-    def areAnagrams(self, s1, s2):
-       # code here
-        if len(s1) != len(s2):
-            return False
+# class Solution:
+#     def areAnagrams(self, s1, s2):
+#        # code here
+#         if len(s1) != len(s2):
+#             return False
            
-        freq1 = [0] * 26
-        freq2 = [0] * 26
+#         freq1 = [0] * 26
+#         freq2 = [0] * 26
         
-        for char in s1:
-            freq1[ord(char) - ord('a')] += 1
+#         for char in s1:
+#             freq1[ord(char) - ord('a')] += 1
             
-        for char in s2:
-            freq2[ord(char) - ord('a')] += 1
+#         for char in s2:
+#             freq2[ord(char) - ord('a')] += 1
 
 
-#Day17
-class Solution:
-    def nonRepeatingChar(self,s):
-        #code here
+# #Day17
+# class Solution:
+#     def nonRepeatingChar(self,s):
+#         #code here
     
-        freq = {}
+#         freq = {}
         
-        for ch in s:
-            freq[ch] = freq.get(ch , 0) + 1
+#         for ch in s:
+#             freq[ch] = freq.get(ch , 0) + 1
             
-        for ch in s:
-            if freq[ch] == 1:
-                return ch
+#         for ch in s:
+#             if freq[ch] == 1:
+#                 return ch
         
-        return '$'
+#         return '$'
             
-        return freq1 == freq2
+#         return freq1 == freq2
        
