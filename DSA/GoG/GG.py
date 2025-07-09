@@ -294,3 +294,21 @@ class Solution:
                 else:
                     i+=1
         return result
+
+class Solution:
+    def minChar(self, s):
+        #Write your code here
+        rev_s = s[::-1]
+        temp = s + '#' + rev_s
+        lps = [0] * len(temp)
+        
+        for i in range(1 , len(temp)):
+            l = lps[i-1]
+            while l > 0 and temp[i] != temp[l]:
+                l = lps[l-1]
+            if temp[i] == temp[l]:
+                l+=1
+            
+            lps[i] = l
+            
+        return len(s) - lps[-1]
