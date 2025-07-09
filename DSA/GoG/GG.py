@@ -43,28 +43,28 @@
 # Day4
 # User function Template for python3
 
-from typing import List
+# from typing import List
 
 
-class Solution:
-    # Function to rotate an array by d elements in counter-clockwise direction.
-    def rotateArr(self, arr, d):
-        n = len(arr)
-        d = d % n
-        pos = 0
-        stored_part = []
-        for i in range(d):
-            stored_part.append(arr[i])
+# class Solution:
+#     # Function to rotate an array by d elements in counter-clockwise direction.
+#     def rotateArr(self, arr, d):
+#         n = len(arr)
+#         d = d % n
+#         pos = 0
+#         stored_part = []
+#         for i in range(d):
+#             stored_part.append(arr[i])
 
-        for i in range(d, n):
-            arr[pos] = arr[i]
-            pos += 1
+#         for i in range(d, n):
+#             arr[pos] = arr[i]
+#             pos += 1
 
-        for i in range(d):
-            arr[pos] = stored_part[i]
-            pos += 1
+#         for i in range(d):
+#             arr[pos] = stored_part[i]
+#             pos += 1
 
-        return arr
+#         return arr
 
 
 # # Day 7
