@@ -324,3 +324,24 @@ class Solution:
         if len(s1) != len(s2):
             return False
         return s2 in (s1 + s1)
+
+#Day21
+class Solution:
+    # Function to sort an array of 0s, 1s, and 2s
+    def sort012(self, arr):
+        # code here
+        n = len(arr)
+        low,mid,high = 0,0,n-1
+        
+        while(mid <= high):
+            if arr[mid] == 0:
+                arr[low] , arr[mid] = arr[mid] , arr[low]
+                low+=1
+                mid+=1
+            elif arr[mid] == 1:
+                mid+=1
+            else:
+                arr[mid] , arr[high] = arr[high] , arr[mid]
+                high-=1
+        
+        return arr
