@@ -313,57 +313,57 @@ class Solution:
             
 #         return len(s) - lps[-1]
 
-#Day20
-#User function Template for python3
+# #Day20
+# #User function Template for python3
 
-class Solution:
+# class Solution:
     
-    #Function to check if two strings are rotations of each other or not.
-    def areRotations(self,s1,s2):
-        #code here
-        if len(s1) != len(s2):
-            return False
-        return s2 in (s1 + s1)
+#     #Function to check if two strings are rotations of each other or not.
+#     def areRotations(self,s1,s2):
+#         #code here
+#         if len(s1) != len(s2):
+#             return False
+#         return s2 in (s1 + s1)
 
-#Day21
-class Solution:
-    # Function to sort an array of 0s, 1s, and 2s
-    def sort012(self, arr):
-        # code here
-        n = len(arr)
-        low,mid,high = 0,0,n-1
+# #Day21
+# class Solution:
+#     # Function to sort an array of 0s, 1s, and 2s
+#     def sort012(self, arr):
+#         # code here
+#         n = len(arr)
+#         low,mid,high = 0,0,n-1
         
-        while(mid <= high):
-            if arr[mid] == 0:
-                arr[low] , arr[mid] = arr[mid] , arr[low]
-                low+=1
-                mid+=1
-            elif arr[mid] == 1:
-                mid+=1
-            else:
-                arr[mid] , arr[high] = arr[high] , arr[mid]
-                high-=1
+#         while(mid <= high):
+#             if arr[mid] == 0:
+#                 arr[low] , arr[mid] = arr[mid] , arr[low]
+#                 low+=1
+#                 mid+=1
+#             elif arr[mid] == 1:
+#                 mid+=1
+#             else:
+#                 arr[mid] , arr[high] = arr[high] , arr[mid]
+#                 high-=1
         
-        return arr
+#         return arr
 
-#Day22
-#User function Template for python3
-class Solution:
-    # Function to find hIndex
-    def hIndex(self, citations):
-        #code here
-        n = len(citations)
-        count = [0] *(n+1)
+# #Day22
+# #User function Template for python3
+# class Solution:
+#     # Function to find hIndex
+#     def hIndex(self, citations):
+#         #code here
+#         n = len(citations)
+#         count = [0] *(n+1)
         
-        for c in citations:
-            if c >= n:
-                count[n] +=1
-            else:
-                count[c] +=1
+#         for c in citations:
+#             if c >= n:
+#                 count[n] +=1
+#             else:
+#                 count[c] +=1
                 
-        total = 0
-        for h in range(n,-1,-1):
-            total+=count[h]
-            if total >= h:
-                return h
-        return 0
+#         total = 0
+#         for h in range(n,-1,-1):
+#             total+=count[h]
+#             if total >= h:
+#                 return h
+#         return 0
