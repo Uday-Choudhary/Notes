@@ -345,3 +345,25 @@ class Solution:
                 high-=1
         
         return arr
+
+#Day22
+#User function Template for python3
+class Solution:
+    # Function to find hIndex
+    def hIndex(self, citations):
+        #code here
+        n = len(citations)
+        count = [0] *(n+1)
+        
+        for c in citations:
+            if c >= n:
+                count[n] +=1
+            else:
+                count[c] +=1
+                
+        total = 0
+        for h in range(n,-1,-1):
+            total+=count[h]
+            if total >= h:
+                return h
+        return 0
