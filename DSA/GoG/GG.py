@@ -412,3 +412,24 @@ class Solution:
             arr[left+i] = temp[i]
             
         return inv_count
+
+#Day24
+class Solution:
+	def mergeOverlap(self, arr):
+	    if not arr:
+            return []
+		   
+	    arr.sort(key = lambda x: x[0])
+	    
+	    merged = [arr[0]]
+	    
+        for current in arr[1:]:
+            last = merged[-1]
+	        
+            if current[0] <= last[1]:
+                last[1] = max(last[1] , current[1])
+            else:
+                merged.append(current)
+        
+        return merged
+	        
