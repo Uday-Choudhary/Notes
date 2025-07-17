@@ -479,3 +479,37 @@ class Solution:
                 last_end = intervals[i][1]
                 
         return len(intervals) - non_overlap_count
+
+#Day27
+class Solution:
+    def mergeArrays(self, a, b):
+        # code here
+        import math
+        
+        n = len(a)
+        m = len(b)
+        total_len = n+m
+        gap = (total_len + 1) // 2
+        
+        while gap > 0:
+            i=0
+            j=gap
+            
+            while j < total_len:
+                if i < n and j < n:
+                    if a[i] > a[j]:
+                        a[i],a[j] = a[j],a[i]
+                
+                elif i < n and j >= n:
+                    if a[i] > b[j-n]:
+                        a[i],b[j-n] = b[j-n] ,a[i]
+                
+                elif i>= n and j>= n :
+                    if b[i-n] > b[j-n]:
+                        b[i-n],b[j-n] = b[j-n] , b[i-n]
+                
+                i+=1
+                j+=1
+            if gap == 1:
+                break
+            gap = (gap+1) // 2
