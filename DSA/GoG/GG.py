@@ -549,6 +549,26 @@ class Solution:
         first = first_occurrence(arr,target)
         if first == -1:
             return 0
+
+#Day29
+#User function Template for python3
+
+class Solution:
+    def findMin(self, arr):
+        #complete the function here
+        low = 0
+        high = len(arr) - 1
+        
+        while low < high:
+            mid = low + (high-low) // 2
+            
+            if arr[mid] > arr[high]:
+                low = mid+1
+            else:
+                high = mid
+        
+        return arr[low]
+                
         
         last = last_occurrence(arr,target)
         return last - first + 1
