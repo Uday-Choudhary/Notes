@@ -594,3 +594,5 @@ class Solution:
                 
         last = last_occurrence(arr,target)
         return last - first + 1
+
+#Day31
