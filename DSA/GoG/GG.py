@@ -627,3 +627,36 @@ class Solution:
             else:
                 low = cut1 + 1
         return -1
+
+#Day33
+class Solution:
+
+    def aggressiveCows(self, stalls, k):
+        # your code here
+        stalls.sort()
+        low = 1
+        high = stalls[-1] - stalls[0]
+        result = 0
+        
+        while low <= high:
+            mid = (low+high) // 2
+            if self.is_possible(stalls,k,mid):
+                result = mid
+                low = mid+1
+            else:
+                high = mid-1
+        return result
+        
+    def is_possible(self,stalls,k,min_dist):
+        cows_placed = 1
+        last_pos = stalls[0]
+        
+        for i in range(1 , len(stalls)):
+            if stalls[i] - last_pos >= min_dist:
+                cows_placed +=1
+                last_pos = stalls[i]
+            if cows_placed >= k:
+                return True
+        return False
+            
+
