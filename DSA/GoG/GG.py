@@ -658,5 +658,43 @@ class Solution:
             if cows_placed >= k:
                 return True
         return False
+
+#Day34
+class Solution:
+    
+    #Function to find minimum number of pages.
+    def isPossible(self,arr,n,k,max_pages):
+        students = 1
+        pages = 0
+        
+        for i in range(n):
+            if arr[i] > max_pages:
+                return False
             
+            if pages + arr[i] <= max_pages:
+                pages += arr[i]
+            else:
+                students +=1
+                pages = arr[i]
+                if students > k:
+                    return False
+        return True
+    
+    def findPages(self, arr, k):
+        #code here
+        n = len(arr)
+        if k > n:
+            return -1
+        low = max(arr)
+        high = sum(arr)
+        result = -1
+        
+        while low <= high:
+            mid = (low+high) // 2
+            if self.isPossible(arr,n,k,mid):
+                result = mid
+                high = mid-1
+            else:
+                low = mid+1
+        return result
 
