@@ -153,23 +153,23 @@
         
 #         return max(max_kadane , total_sum - min_kadane)
 #Day13
-class Solution:
-    def missingNumber(self, arr):
-        n = len(arr)
-        i = 0
+# class Solution:
+#     def missingNumber(self, arr):
+#         n = len(arr)
+#         i = 0
         
-        while i < n:
-            co_idx = arr[i] - 1
-            if 1 <= arr[i] <= n and arr[i] != arr[co_idx]:
-                arr[i] , arr[co_idx] = arr[co_idx] , arr[i]
-            else:
-                i+=1
+#         while i < n:
+#             co_idx = arr[i] - 1
+#             if 1 <= arr[i] <= n and arr[i] != arr[co_idx]:
+#                 arr[i] , arr[co_idx] = arr[co_idx] , arr[i]
+#             else:
+#                 i+=1
         
-        for i in range(n):
-            if arr[i] != i+1 :
-                return i+1
+#         for i in range(n):
+#             if arr[i] != i+1 :
+#                 return i+1
         
-        return n+1
+#         return n+1
 #Day14 Strings
 #User function template for Python
 # class Solution:
