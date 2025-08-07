@@ -369,21 +369,21 @@
 #         return 0
 
 #day23
-class Solution:
-    def inversionCount(self, arr):
-        # Code Here
-        n = len(arr)
-        return self.mergeSort(arr,0,n-1)
+# class Solution:
+#     def inversionCount(self, arr):
+#         # Code Here
+#         n = len(arr)
+#         return self.mergeSort(arr,0,n-1)
         
-    def mergeSort(self , arr, left , right):
-        inv_count = 0
-        if left < right:
-            mid = (left+ right) // 2
-            inv_count += self.mergeSort(arr,left,mid)
-            inv_count += self.mergeSort(arr,mid+1, right)
-            inv_count += self.merge(arr,left,mid,right)
+#     def mergeSort(self , arr, left , right):
+#         inv_count = 0
+#         if left < right:
+#             mid = (left+ right) // 2
+#             inv_count += self.mergeSort(arr,left,mid)
+#             inv_count += self.mergeSort(arr,mid+1, right)
+#             inv_count += self.merge(arr,left,mid,right)
             
-        return inv_count
+#         return inv_count
         
     
     def merge(self,arr,left,mid,right):
