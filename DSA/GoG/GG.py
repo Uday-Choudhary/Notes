@@ -460,25 +460,25 @@
 #Day26
 #User function Template for python3
 
-class Solution:
-    def minRemoval(self, intervals):
-        # Code here
-        if not intervals or len(intervals) <= 1:
-            return 0
+# class Solution:
+#     def minRemoval(self, intervals):
+#         # Code here
+#         if not intervals or len(intervals) <= 1:
+#             return 0
         
-        intervals.sort(key = lambda x:x[1])
+#         intervals.sort(key = lambda x:x[1])
         
-        non_overlap_count = 1
-        last_end = intervals[0][1]
+#         non_overlap_count = 1
+#         last_end = intervals[0][1]
         
-        for i in range(1 , len(intervals)):
-            current_start = intervals[i][0]
+#         for i in range(1 , len(intervals)):
+#             current_start = intervals[i][0]
             
-            if current_start >= last_end:
-                non_overlap_count +=1
-                last_end = intervals[i][1]
+#             if current_start >= last_end:
+#                 non_overlap_count +=1
+#                 last_end = intervals[i][1]
                 
-        return len(intervals) - non_overlap_count
+#         return len(intervals) - non_overlap_count
 
 #Day27
 class Solution:
