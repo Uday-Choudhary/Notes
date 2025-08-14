@@ -386,32 +386,32 @@
 #         return inv_count
         
     
-    def merge(self,arr,left,mid,right):
-        temp = []
-        i = left
-        j = mid+1
-        inv_count = 0
+    # def merge(self,arr,left,mid,right):
+    #     temp = []
+    #     i = left
+    #     j = mid+1
+    #     inv_count = 0
         
-        while i <= mid and j <= right:
-            if arr[i] <= arr[j] :
-                temp.append(arr[i])
-                i+=1
-            else:
-                temp.append(arr[j])
-                inv_count += (mid - i + 1)
-                j+=1
+    #     while i <= mid and j <= right:
+    #         if arr[i] <= arr[j] :
+    #             temp.append(arr[i])
+    #             i+=1
+    #         else:
+    #             temp.append(arr[j])
+    #             inv_count += (mid - i + 1)
+    #             j+=1
                 
-        while i <= mid:
-            temp.append(arr[i])
-            i+=1
-        while j <= right:
-            temp.append(arr[j])
-            j+=1
+    #     while i <= mid:
+    #         temp.append(arr[i])
+    #         i+=1
+    #     while j <= right:
+    #         temp.append(arr[j])
+    #         j+=1
             
-        for i in range(len(temp)):
-            arr[left+i] = temp[i]
+    #     for i in range(len(temp)):
+    #         arr[left+i] = temp[i]
             
-        return inv_count
+    #     return inv_count
 
 # #Day24
 # class Solution:
