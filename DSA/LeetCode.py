@@ -191,8 +191,8 @@
 
 # print(minDays(bloomDay, m, k))
 
-''' check function mid le rha h dekh rha h days mid se  kam ya equal h to ek flower khil 
-jayga aise contine jitni bar ho rh h flower bada rhe h if flower = k ho rhe h to bouket +
-1 kar rhe h or flower ko vapas 0 kar rhe h kyoki ek bouke ban gaya h nai karnge to flower 
-badtee jaynge vapas k vali condition check he nai hogi orrr day jab bhi jyada aa jye mtlb or time 
-lagega uss day flower bloom nai hoga to abhi tak ki strek flower = 0 kar daynge'''
+# ''' check function mid le rha h dekh rha h days mid se  kam ya equal h to ek flower khil 
+# jayga aise contine jitni bar ho rh h flower bada rhe h if flower = k ho rhe h to bouket +
+# 1 kar rhe h or flower ko vapas 0 kar rhe h kyoki ek bouke ban gaya h nai karnge to flower 
+# badtee jaynge vapas k vali condition check he nai hogi orrr day jab bhi jyada aa jye mtlb or time 
+# lagega uss day flower bloom nai hoga to abhi tak ki strek flower = 0 kar daynge'''
