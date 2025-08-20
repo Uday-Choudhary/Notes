@@ -1,4 +1,4 @@
-# # Maximum points you can obtain from cards #1423
+# # Maximum points you can obtain from cards #142 3
 
 # def maxScore(nums, k):
 #     left_sum = 0
