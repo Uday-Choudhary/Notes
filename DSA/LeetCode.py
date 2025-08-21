@@ -196,3 +196,25 @@
 # 1 kar rhe h or flower ko vapas 0 kar rhe h kyoki ek bouke ban gaya h nai karnge to flower 
 # badtee jaynge vapas k vali condition check he nai hogi orrr day jab bhi jyada aa jye mtlb or time 
 # lagega uss day flower bloom nai hoga to abhi tak ki strek flower = 0 kar daynge'''
+
+
+# 78. Subsets
+# class Solution(object):
+#     def subsets(self, nums):
+#         ans = []
+#         current = []
+
+#         def sub(index):
+#             if index == len(nums):
+#                 ans.append(list(current))  
+#                 return
+            
+#             current.append(nums[index])        
+#             sub(index+1)
+            
+#             current.pop()                     
+#             sub(index+1)
+
+#         sub(0)
+#         return ans
+
