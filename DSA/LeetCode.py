@@ -218,3 +218,45 @@
 #         sub(0)
 #         return ans
 
+# 1305. All Elements in Two Binary Search Trees
+
+class Solution(object):
+    
+    def inorder(self, root, arr):
+        if root is None:
+            return arr
+        
+        self.inorder(root.left, arr) 
+        arr.append(root.val)
+        self.inorder(root.right, arr)
+
+        return arr
+
+    def mergeArr(self, arr1, arr2):
+        merged = []
+        i = j = 0
+
+        while i < len(arr1) and j < len(arr2):
+            if arr1[i] <= arr2[j]:
+                merged.append(arr1[i])
+                i += 1
+            else:
+                merged.append(arr2[j])
+                j += 1
+
+        merged.extend(arr1[i:])
+        merged.extend(arr2[j:])
+
+        return merged
+        
+    def getAllElements(self, root1, root2):
+        """
+        :type root1: Optional[TreeNode]
+        :type root2: Optional[TreeNode]
+        :rtype: List[int]
+        """
+        arr1 = self.inorder(root1, [])
+        arr2 = self.inorder(root2, [])
+
+        return self.mergeArr(arr1, arr2)
+
