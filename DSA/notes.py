@@ -581,3 +581,11 @@ class Solution:
                 anagrams[sorted_s] = []
             anagrams[sorted_s].append(s)
         return list(anagrams.values())
+\n\n# Find Minimum in Rotated Sorted Array\nclass Solution:
+    def findMin(self, nums):
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] > nums[right]: left = mid + 1
+            else: right = mid
+        return nums[left]
