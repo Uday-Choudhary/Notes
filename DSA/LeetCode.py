@@ -260,3 +260,32 @@ class Solution(object):
 
         return self.mergeArr(arr1, arr2)
 
+
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        curr = []
+        all_ans = []
+
+        def helper(start, target):
+            if target == 0:
+                all_ans.append(list(curr))
+                return
+
+            if target < 0:
+                return
+
+            i = start
+            while i < len(candidates):
+                curr.append(candidates[i])
+                helper(i, target - candidates[i])  
+                curr.pop()
+                i += 1
+
+        helper(0, target)
+        return all_ans
+
