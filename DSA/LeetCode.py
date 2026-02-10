@@ -333,30 +333,55 @@ class Solution(object):
 
         return strs[0]
 
-class Solution(object):
-    def isValid(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        stack = []
-        mapping = {
-            ')': '(',
-            '}': '{',
-            ']': '['
-        }
+# class Solution(object):
+#     def isValid(self, s):
+#         """
+#         :type s: str
+#         :rtype: bool
+#         """
+#         stack = []
+#         mapping = {
+#             ')': '(',
+#             '}': '{',
+#             ']': '['
+#         }
 
-        for char in s:
-            if char in mapping:  
-                if not stack or stack[-1] != mapping[char]:
-                    return False
-                stack.pop()
-            else:  
-                stack.append(char)
+#         for char in s:
+#             if char in mapping:  
+#                 if not stack or stack[-1] != mapping[char]:
+#                     return False
+#                 stack.pop()
+#             else:  
+#                 stack.append(char)
 
-        return len(stack) == 0
+#         return len(stack) == 0
 
 
         
-        return root
+#         return root
+
+class Solution(object):
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+
+        low = mid = 0
+        high =  len(nums) - 1
+
+        while(mid <= high):
+            if(nums[mid] == 0):
+                nums[low] , nums[mid] = nums[mid] , nums[low]
+                low += 1
+                mid += 1
+            elif (nums[mid] == 1):
+                mid += 1
+            else:
+                nums[high] , nums[mid] = nums[mid] , nums[high]
+                high -= 1
+        return nums
+
+
+
 
