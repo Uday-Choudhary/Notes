@@ -360,27 +360,50 @@ class Solution(object):
         
 #         return root
 
+# class Solution(object):
+#     def sortColors(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: None Do not return anything, modify nums in-place instead.
+#         """
+
+#         low = mid = 0
+#         high =  len(nums) - 1
+
+#         while(mid <= high):
+#             if(nums[mid] == 0):
+#                 nums[low] , nums[mid] = nums[mid] , nums[low]
+#                 low += 1
+#                 mid += 1
+#             elif (nums[mid] == 1):
+#                 mid += 1
+#             else:
+#                 nums[high] , nums[mid] = nums[mid] , nums[high]
+#                 high -= 1
+#         return nums
+
 class Solution(object):
-    def sortColors(self, nums):
+    def pivotIndex(self, nums):
         """
         :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
+        :rtype: int
         """
+        total_sum = sum(nums)
+        n = len(nums)
+        left_sum = 0
+        right_sum = 0
+        ans = -1
 
-        low = mid = 0
-        high =  len(nums) - 1
+        for i in range(n):
+            
+            right_sum = total_sum - nums[i] - left_sum
+            if(left_sum == right_sum):
+                ans = i
+                break
+            left_sum += nums[i]
+        
+        return ans
 
-        while(mid <= high):
-            if(nums[mid] == 0):
-                nums[low] , nums[mid] = nums[mid] , nums[low]
-                low += 1
-                mid += 1
-            elif (nums[mid] == 1):
-                mid += 1
-            else:
-                nums[high] , nums[mid] = nums[mid] , nums[high]
-                high -= 1
-        return nums
 
 
 
