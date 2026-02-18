@@ -314,6 +314,97 @@ class Solution(object):
             
             root.val = successor.val
             root.right = self.deleteNode(root.right, successor.val)
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
         
-        return root
+        if not strs:
+            return ""
+
+        for i in range(len(strs[0])):
+            ch = strs[0][i]
+            for s in strs[1:]:
+                if i == len(s) or s[i] != ch:
+                    return strs[0][:i]
+
+        return strs[0]
+
+# class Solution(object):
+#     def isValid(self, s):
+#         """
+#         :type s: str
+#         :rtype: bool
+#         """
+#         stack = []
+#         mapping = {
+#             ')': '(',
+#             '}': '{',
+#             ']': '['
+#         }
+
+#         for char in s:
+#             if char in mapping:  
+#                 if not stack or stack[-1] != mapping[char]:
+#                     return False
+#                 stack.pop()
+#             else:  
+#                 stack.append(char)
+
+#         return len(stack) == 0
+
+
+        
+#         return root
+
+# class Solution(object):
+#     def sortColors(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: None Do not return anything, modify nums in-place instead.
+#         """
+
+#         low = mid = 0
+#         high =  len(nums) - 1
+
+#         while(mid <= high):
+#             if(nums[mid] == 0):
+#                 nums[low] , nums[mid] = nums[mid] , nums[low]
+#                 low += 1
+#                 mid += 1
+#             elif (nums[mid] == 1):
+#                 mid += 1
+#             else:
+#                 nums[high] , nums[mid] = nums[mid] , nums[high]
+#                 high -= 1
+#         return nums
+
+class Solution(object):
+    def pivotIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        total_sum = sum(nums)
+        n = len(nums)
+        left_sum = 0
+        right_sum = 0
+        ans = -1
+
+        for i in range(n):
+            
+            right_sum = total_sum - nums[i] - left_sum
+            if(left_sum == right_sum):
+                ans = i
+                break
+            left_sum += nums[i]
+        
+        return ans
+
+
+
+
 
