@@ -130,3 +130,17 @@ class Solution:
                 profit = i - min_price
                 max_profit = max(max_profit , profit)
         return max_profit
+
+# Two Sum
+# Given an array of integers nums and an integer target,
+# return indices of the two numbers such that they add up to target.
+class Solution:
+    def twoSum(self, nums, target):
+        hashmap = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in hashmap:
+                return [hashmap[complement], i]
+            hashmap[num] = i
+        return []
+
