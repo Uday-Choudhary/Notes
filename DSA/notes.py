@@ -205,3 +205,19 @@ class Solution:
             max_sum = max(max_sum, current_sum)
         return max_sum
 
+
+# Binary Search
+# Given a sorted array of integers and a target, return the index if found, else -1.
+class Solution:
+    def search(self, nums, target):
+        left, right = 0, len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return -1
+
