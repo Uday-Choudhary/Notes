@@ -221,3 +221,16 @@ class Solution:
                 right = mid - 1
         return -1
 
+
+# Climbing Stairs
+# You are climbing a staircase. It takes n steps to reach the top.
+# Each time you can climb 1 or 2 steps. How many distinct ways can you climb?
+class Solution:
+    def climbStairs(self, n):
+        if n <= 2:
+            return n
+        a, b = 1, 2
+        for _ in range(3, n + 1):
+            a, b = b, a + b
+        return b
+
