@@ -251,3 +251,14 @@ class Solution:
             return True
         return isMirror(root.left, root.right)
 
+
+# Single Number
+# Given a non-empty array where every element appears twice except one, find that single one.
+# XOR approach - O(n) time, O(1) space
+class Solution:
+    def singleNumber(self, nums):
+        result = 0
+        for num in nums:
+            result ^= num
+        return result
+
