@@ -262,3 +262,17 @@ class Solution:
             result ^= num
         return result
 
+
+# Intersection of Two Linked Lists
+# Find the node at which two singly linked lists intersect.
+class Solution:
+    def getIntersectionNode(self, headA, headB):
+        if not headA or not headB:
+            return None
+        pointerA = headA
+        pointerB = headB
+        while pointerA != pointerB:
+            pointerA = pointerA.next if pointerA else headB
+            pointerB = pointerB.next if pointerB else headA
+        return pointerA
+
