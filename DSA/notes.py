@@ -290,3 +290,15 @@ class Solution:
             count += 1 if num == candidate else -1
         return candidate
 
+
+# Move Zeroes
+# Move all 0s to the end of array while maintaining relative order of non-zero elements.
+class Solution:
+    def moveZeroes(self, nums):
+        write_pos = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[write_pos], nums[i] = nums[i], nums[write_pos]
+                write_pos += 1
+        return nums
+
