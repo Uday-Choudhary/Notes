@@ -302,3 +302,15 @@ class Solution:
                 write_pos += 1
         return nums
 
+
+# Palindrome Linked List
+# Given the head of a singly linked list, return true if it is a palindrome.
+class Solution:
+    def isPalindrome(self, head):
+        vals = []
+        current = head
+        while current:
+            vals.append(current.val)
+            current = current.next
+        return vals == vals[::-1]
+
