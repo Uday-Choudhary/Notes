@@ -358,3 +358,17 @@ class Solution:
             prefix_map[prefix_sum] = prefix_map.get(prefix_sum, 0) + 1
         return count
 
+
+# Find All Duplicates in an Array
+# Given an array where 1 <= a[i] <= n, find all elements that appear twice.
+class Solution:
+    def findDuplicates(self, nums):
+        result = []
+        for num in nums:
+            index = abs(num) - 1
+            if nums[index] < 0:
+                result.append(abs(num))
+            else:
+                nums[index] = -nums[index]
+        return result
+
