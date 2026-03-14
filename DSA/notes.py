@@ -389,3 +389,21 @@ class Solution:
         reverse(k, n - 1)
         return nums
 
+
+# Product of Array Except Self
+# Given an integer array nums, return an array where answer[i] is the product
+# of all elements except nums[i], without using division.
+class Solution:
+    def productExceptSelf(self, nums):
+        n = len(nums)
+        result = [1] * n
+        left_product = 1
+        for i in range(n):
+            result[i] = left_product
+            left_product *= nums[i]
+        right_product = 1
+        for i in range(n - 1, -1, -1):
+            result[i] *= right_product
+            right_product *= nums[i]
+        return result
+
