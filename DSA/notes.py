@@ -407,3 +407,22 @@ class Solution:
             right_product *= nums[i]
         return result
 
+
+# Sort Colors - Dutch National Flag Problem
+# Given an array with n objects colored red (0), white (1), or blue (2),
+# sort them in-place so that same colors are adjacent.
+class Solution:
+    def sortColors(self, nums):
+        low, mid, high = 0, 0, len(nums) - 1
+        while mid <= high:
+            if nums[mid] == 0:
+                nums[low], nums[mid] = nums[mid], nums[low]
+                low += 1
+                mid += 1
+            elif nums[mid] == 1:
+                mid += 1
+            else:
+                nums[mid], nums[high] = nums[high], nums[mid]
+                high -= 1
+        return nums
+
