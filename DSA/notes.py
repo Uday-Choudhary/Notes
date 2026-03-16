@@ -426,3 +426,21 @@ class Solution:
                 high -= 1
         return nums
 
+
+# Container With Most Water
+# Given n non-negative integers representing vertical lines,
+# find two lines that together with x-axis form a container with the most water.
+class Solution:
+    def maxArea(self, height):
+        left, right = 0, len(height) - 1
+        max_water = 0
+        while left < right:
+            width = right - left
+            h = min(height[left], height[right])
+            max_water = max(max_water, width * h)
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -= 1
+        return max_water
+
