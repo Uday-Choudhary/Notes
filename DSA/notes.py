@@ -525,3 +525,13 @@ class Solution:
             if intervals[i][0] < intervals[i-1][1]:
                 return False
         return True
+
+
+# Top K Frequent Elements
+# Given an integer array nums and an integer k, return the k most frequent elements.
+class Solution:
+    def topKFrequent(self, nums, k):
+        count = {}
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+        return sorted(count.keys(), key=lambda x: count[x], reverse=True)[:k]
