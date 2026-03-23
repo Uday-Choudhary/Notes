@@ -535,3 +535,20 @@ class Solution:
         for num in nums:
             count[num] = count.get(num, 0) + 1
         return sorted(count.keys(), key=lambda x: count[x], reverse=True)[:k]
+
+
+# Longest Consecutive Sequence
+# Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+class Solution:
+    def longestConsecutive(self, nums):
+        num_set = set(nums)
+        longest = 0
+        for num in num_set:
+            if num - 1 not in num_set:
+                current_num = num
+                current_streak = 1
+                while current_num + 1 in num_set:
+                    current_num += 1
+                    current_streak += 1
+                longest = max(longest, current_streak)
+        return longest
