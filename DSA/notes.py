@@ -621,3 +621,10 @@ class Solution:
                 if a - c >= 0:
                     dp[a] = min(dp[a], 1 + dp[a - c])
         return dp[amount] if dp[amount] != amount + 1 else -1
+\n\n# Longest Increasing Subsequence\nclass Solution:
+    def lengthOfLIS(self, nums):
+        LIS = [1] * len(nums)
+        for i in range(len(nums) - 1, -1, -1):
+            for j in range(i + 1, len(nums)):
+                if nums[i] < nums[j]: LIS[i] = max(LIS[i], 1 + LIS[j])
+        return max(LIS)
