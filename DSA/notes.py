@@ -628,3 +628,13 @@ class Solution:
             for j in range(i + 1, len(nums)):
                 if nums[i] < nums[j]: LIS[i] = max(LIS[i], 1 + LIS[j])
         return max(LIS)
+\n\n# Word Break\nclass Solution:
+    def wordBreak(self, s, wordDict):
+        dp = [False] * (len(s) + 1)
+        dp[len(s)] = True
+        for i in range(len(s) - 1, -1, -1):
+             for w in wordDict:
+                 if (i + len(w)) <= len(s) and s[i : i + len(w)] == w:
+                     dp[i] = dp[i + len(w)]
+                 if dp[i]: break
+        return dp[0]
