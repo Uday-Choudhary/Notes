@@ -638,3 +638,15 @@ class Solution:
                      dp[i] = dp[i + len(w)]
                  if dp[i]: break
         return dp[0]
+\n\n# Combination Sum\nclass Solution:
+    def combinationSum(self, candidates, target):
+        res = []
+        def dfs(i, cur, total):
+            if total == target: res.append(cur.copy()); return
+            if i >= len(candidates) or total > target: return
+            cur.append(candidates[i])
+            dfs(i, cur, total + candidates[i])
+            cur.pop()
+            dfs(i + 1, cur, total)
+        dfs(0, [], 0)
+        return res
