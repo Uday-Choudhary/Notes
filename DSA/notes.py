@@ -685,3 +685,9 @@ class Solution:
                   newRow[j] = newRow[j + 1] + row[j]
              row = newRow
         return row[0]
+\n\n# Jump Game\nclass Solution:
+    def canJump(self, nums):
+        goal = len(nums) - 1
+        for i in range(len(nums) - 1, -1, -1):
+             if i + nums[i] >= goal: goal = i
+        return goal == 0
