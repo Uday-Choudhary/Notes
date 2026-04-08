@@ -691,3 +691,14 @@ class Solution:
         for i in range(len(nums) - 1, -1, -1):
              if i + nums[i] >= goal: goal = i
         return goal == 0
+\n\n# Clone Graph\nclass Solution:
+    def cloneGraph(self, node):
+        oldToNew = {}
+        def dfs(node):
+             if node in oldToNew: return oldToNew[node]
+             copy = Node(node.val)
+             oldToNew[node] = copy
+             for nei in node.neighbors:
+                  copy.neighbors.append(dfs(nei))
+             return copy
+        return dfs(node) if node else None
