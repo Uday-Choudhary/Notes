@@ -761,3 +761,9 @@ class Solution:
                       dfs(r, c)
                       islands += 1
         return islands
+\n\n# Lowest Common Ancestor of a Binary Search Tree\nclass Solution:
+    def lowestCommonAncestor(self, root, p, q):
+        while root:
+             if p.val > root.val and q.val > root.val: root = root.right
+             elif p.val < root.val and q.val < root.val: root = root.left
+             else: return root
