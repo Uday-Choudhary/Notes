@@ -837,3 +837,15 @@ class WordDictionary:
                 cur = cur.children[c]
                 cur.refs -= 1
 # ... search implementation continues ...
+\n\n# Kth Smallest Element in a BST\nclass Solution:
+    def kthSmallest(self, root, k):
+        stack = []
+        curr = root
+        while stack or curr:
+             while curr:
+                  stack.append(curr)
+                  curr = curr.left
+             curr = stack.pop()
+             k -= 1
+             if k == 0: return curr.val
+             curr = curr.right
